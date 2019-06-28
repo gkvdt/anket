@@ -13,8 +13,9 @@ $result= $query->fetch();
     <div class="alert alert-info">
         <strong><h1>Your Survey Question:</h1> </strong> <h3><strong>1- <?php echo $result['anket_yesorno_questions_qq'];?></strong></h3>
     </div>
-
-    <a href="edit-survey.php?id=<?= $result['anket_yesorno_no_qid']; ?>" class="btn btn-warning btn-sm" value="edit" type="submit" >Edit Survey</a>
+ <button class="btn btn-primary btn-sm   " type="submit" id="addquest"  onclick="questfunc()"
+                     value="1"><i class="zmdi zmdi-mail-send"></i></button>
+   
 
 
 

@@ -3,7 +3,7 @@
 include "../settings/init.php";
 session_start();
 
-if ($_SESSION['admin']){
+if (@$_SESSION['admin']){
     header("location:panel.php");
 }
 

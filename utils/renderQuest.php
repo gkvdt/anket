@@ -1,6 +1,13 @@
 <?php
 
 	include_once 'utils/listAnket.php';
+	
+
+	function getAktifAnket(){
+		return aktifAnketID();
+	}
+
+
 
 	function renderQuests($anketID)
 	{

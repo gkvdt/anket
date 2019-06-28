@@ -5,7 +5,7 @@ function getQuest($anketID)
 {
 	global $db;
 	$sql = "SELECT * FROM soru WHERE anketID={$anketID}";
-	$quests = array();
+	$quests = [];
 	$result = $db->query($sql, PDO::FETCH_ASSOC);
 	if ($result->rowCount() > 0) {
 		foreach ($result as $row) {
@@ -29,4 +29,16 @@ function getChoice($soruID)
 		}
 	}
 	return $choice;
+}
+function aktifAnketID()
+{
+	global $db;
+	$sql = 'SELECT * FROM aktif_anket ORDER BY DESC';
+	$result = $db->query($sql, PDO::FETCH_ASSOC);
+	if ($result->rowCount() > 0) {
+		foreach ($result as $row) {
+			return $row['aktif_id'];
+		}
+	}
+	return null;
 }
