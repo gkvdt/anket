@@ -33,7 +33,7 @@ function getChoice($soruID)
 function aktifAnketID()
 {
 	global $db;
-	$sql = 'SELECT * FROM aktif_anket ORDER BY DESC';
+	$sql = 'SELECT * FROM aktif_anket ORDER BY DESC aktif_id';
 	$result = $db->query($sql, PDO::FETCH_ASSOC);
 	if ($result->rowCount() > 0) {
 		foreach ($result as $row) {

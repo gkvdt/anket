@@ -27,14 +27,12 @@
                                 <tr>
                                     <th>Position</th>
                                     <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
+
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php include_once '../utils/anketSonuc.php';
-									anketSonucListele();
+                                <?php include_once '../utils/anketSonucDetay.php';
+									anketSonucListele($_GET['anket_id']);
 								?>
                             </tbody>
                         </table>

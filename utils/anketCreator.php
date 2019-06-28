@@ -9,6 +9,8 @@
 		$sql = "INSERT INTO anket (baslik) VALUES ('{$title}')";
 		if ($db->query($sql)) {
 			echo 'ok';
+
+			echo '<script>window.location.href="../admin/anket-listele.php"</script>';
 		} else {
 			echo 'error1';
 		}
@@ -81,7 +83,11 @@
 		addQuest($anketID, $quest, 3, $sik);
 	}
 
-	if (@$_GET) {
+	if ($_GET['anket_title']) {
+		createAnket($_GET['anket_title']);
+	}
+
+	if (@$_GET['typee']) {
 		switch ($_GET['typee']) {
 			case 1:
 				createMultiOption($_GET['anket_id'], $_GET['quest'], $_GET['choice']);

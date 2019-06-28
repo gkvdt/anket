@@ -8,15 +8,14 @@ if (!$_SESSION['user']) {
 }
 
 if (get('submit')) {
-    
-    /*
+	/*
 if (!empty(post('anket_yesorno_branch') && post('anket_yesorno_fullname') && post('anket_yesorno_country') && post('anket_yesorno_telno') && post('anket_yesorno_email') && post('anket_yesorno_answer'))) {
 		$query = $db->prepare('INSERT INTO anket_yesorno SET anket_yesorno_branch = :anket_yesorno_branch,
-                anket_yesorno_fullname = :anket_yesorno_fullname, anket_yesorno_country = :anket_yesorno_country,
-                anket_yesorno_telno = :anket_yesorno_telno, anket_yesorno_email = :anket_yesorno_email,
-                anket_yesorno_answer = :anket_yesorno_answer, anket_yesorno_no_answer = :anket_yesorno_no_answer
+				anket_yesorno_fullname = :anket_yesorno_fullname, anket_yesorno_country = :anket_yesorno_country,
+				anket_yesorno_telno = :anket_yesorno_telno, anket_yesorno_email = :anket_yesorno_email,
+				anket_yesorno_answer = :anket_yesorno_answer, anket_yesorno_no_answer = :anket_yesorno_no_answer
 
-        ');
+		');
 
 		$insert = $query->execute([
 			'anket_yesorno_branch' => post('anket_yesorno_branch'),
@@ -29,19 +28,19 @@ if (!empty(post('anket_yesorno_branch') && post('anket_yesorno_fullname') && pos
 		]);
 
 		if ($insert) {
-			print  "<div class=\"alert alert-success\"> 
-                <strong>Well done!</strong> 
-                     <h5>Thank you for your feedback ....!</h5><strong><h6>Sultan's Team :)</h6></strong>
-                </div> ";
+			print  "<div class=\"alert alert-success\">
+				<strong>Well done!</strong>
+					 <h5>Thank you for your feedback ....!</h5><strong><h6>Sultan's Team :)</h6></strong>
+				</div> ";
 
 			header('location:logout.php');
 		}
 	} else {
-		print   '<div class="alert alert-danger"> 
-                <strong>OppS!</strong> you have to fill in all fields!.
-                </div> ';
+		print   '<div class="alert alert-danger">
+				<strong>OppS!</strong> you have to fill in all fields!.
+				</div> ';
 	}
-    */
+	*/
 }
 
 ?>
@@ -342,11 +341,9 @@ if (!empty(post('anket_yesorno_branch') && post('anket_yesorno_fullname') && pos
                         <?php
 
 	include_once 'utils/renderQuest.php';
-    
-    
-        $size  = renderQuests(2);
 
-                        ?>
+				$size = renderQuests(getAktifAnket());
+				?>
 
             <input type="hidden" name="size" value="<?php echo $size; ?>">
                         <!--
@@ -363,9 +360,9 @@ if (!empty(post('anket_yesorno_branch') && post('anket_yesorno_fullname') && pos
 
                         <div class="row clearfix">
                             <label style="font-weight: bold;" class="text-dark">Survey Question:  </label>&nbsp;
-                            <label  class="text-dark"><?php 
-                            //echo $result['anket_yesorno_questions_qq'];
-                            ?> </label>
+                            <label  class="text-dark"><?php
+							//echo $result['anket_yesorno_questions_qq'];
+							?> </label>
 
                         </div>
 

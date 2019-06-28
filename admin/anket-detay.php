@@ -1,4 +1,9 @@
-<?php include 'header.php';?>
+<?php include 'header.php';
+	include_once '../utils/anketQuestList.php';
+if (!$_GET['anket_id']) {
+	echo '<script>window.location.href="anket-listele.php"</script>';
+}
+?>
 
 
 <!-- anket başlıgı ekle-->
@@ -7,6 +12,7 @@
 
 <?php
 
+	anketQuestList($_GET['anket_id']);
 ?>
 
 </div>
