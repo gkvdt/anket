@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 28 Haz 2019, 09:53:02
+-- Üretim Zamanı: 29 Haz 2019, 11:27:45
 -- Sunucu sürümü: 10.1.37-MariaDB
 -- PHP Sürümü: 7.3.0
 
@@ -57,7 +57,7 @@ CREATE TABLE `aktif_anket` (
 --
 
 INSERT INTO `aktif_anket` (`aktif_id`) VALUES
-(2);
+(4);
 
 -- --------------------------------------------------------
 
@@ -75,11 +75,9 @@ CREATE TABLE `anket` (
 --
 
 INSERT INTO `anket` (`id`, `baslik`) VALUES
-(1, 'test'),
 (2, '0'),
-(3, '0'),
-(4, '0'),
-(5, '0');
+(3, 'deneme'),
+(4, 'full arabic');
 
 -- --------------------------------------------------------
 
@@ -107,7 +105,16 @@ INSERT INTO `anket_data` (`id`, `anketID`, `soruTip`) VALUES
 (7, 2, 3),
 (8, 2, 1),
 (9, 2, 1),
-(10, 2, 2);
+(10, 2, 2),
+(11, 7, 1),
+(12, 2, 1),
+(13, 2, 1),
+(14, 3, 2),
+(15, 3, 3),
+(16, 3, 1),
+(17, 4, 2),
+(18, 4, 3),
+(19, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -129,19 +136,10 @@ CREATE TABLE `anket_sonuc` (
 --
 
 INSERT INTO `anket_sonuc` (`anket_yesorno_id`, `anket_yesorno_branch`, `anket_yesorno_fullname`, `anket_yesorno_country`, `anket_yesorno_telno`, `anket_yesorno_email`) VALUES
-(125, 'JADDAH', 'Mehmet Küçük', 'Hong Kong', '05396609154', 'kckmmt31@gmail.com'),
-(126, 'RIYAD', 'Ceylan Can', 'Kuwait', '00905435532', 'eccemavi.98@gmail.com'),
-(127, 'JADDAH', 'muhammed salah', 'American Samoa', '09987878778', 'murat@muart.net'),
-(128, 'JADDAH', 'murat bekfilavioğlu', 'Turkey', '05357074737', 'murat@muart.net'),
-(129, 'RIYAD', 'ece mavi', 'Germany', '05392374642', 'eccemavi.98@gmail.com'),
-(130, 'JADDAH', 'dede canovs', 'Andorra', '09987878778', 'dwdwd@mail.com'),
-(131, 'JADDAH', 'dede canovs', 'Andorra', '09987878778', 'dwdwd@mail.com'),
-(132, 'RIYAD', 'metin can', 'Anguilla', '05357074737', 'tttt@titanic.com'),
-(133, 'JADDAH', 'muhammed salah', 'Egypt', '00906654334', 'deneme@mail.com'),
-(134, 'RIYAD', 'sad', 'Afghanistan', 'dwqwd', 'wdqd'),
 (135, 'RIYAD', 'sad', 'Afghanistan', 'dwqwd', 'wdqd'),
 (136, 'RIYAD', 'memet', 'Afghanistan', '1', '2'),
-(137, 'RIYAD', 'memet', 'Afghanistan', '1', '2');
+(137, 'RIYAD', 'memet', 'Afghanistan', '1', '2'),
+(138, 'RIYAD', 'vedat güzelkokar', 'Philippines', '05313962251', 'qwd');
 
 -- --------------------------------------------------------
 
@@ -173,7 +171,12 @@ INSERT INTO `anket_sonuc_cevaplar` (`sonucID`, `soru`, `cevap`, `tip`, `aciklama
 (136, 'sorustar', '3', 3, NULL),
 (137, 'soruasdfsdaf', 'NO', 2, 'asfasfasf'),
 (137, 'soru11', '\r\n			asdlşkfjasşdlkfjsd 			', 1, NULL),
-(137, 'sorustar', '3', 3, NULL);
+(137, 'sorustar', '3', 3, NULL),
+(138, 'asd', 'qweqwe', 1, NULL),
+(139, 'asd', 'qweqwe', 1, NULL),
+(138, 'arabic1', 'YES', 2, ''),
+(138, 'arabic2', '5', 3, NULL),
+(138, 'arabic3', '\r\n			نعم ام لا			', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -192,6 +195,57 @@ CREATE TABLE `anket_yesorno_qu` (
 
 INSERT INTO `anket_yesorno_qu` (`anket_yesorno_no_qid`, `anket_yesorno_questions_qq`) VALUES
 (1, 'merhaba bugun nasılsınız ?');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `asik`
+--
+
+CREATE TABLE `asik` (
+  `soruID` int(11) NOT NULL,
+  `val` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `asik`
+--
+
+INSERT INTO `asik` (`soruID`, `val`) VALUES
+(8, 'ar'),
+(8, 'ar'),
+(11, 'arap'),
+(11, 'arpa'),
+(14, 'نعم ام لا'),
+(14, 'نعم ام لا'),
+(14, 'نعم ام لا');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `asoru`
+--
+
+CREATE TABLE `asoru` (
+  `id` int(11) NOT NULL,
+  `anketID` int(11) NOT NULL,
+  `soru` varchar(500) NOT NULL,
+  `tip` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `asoru`
+--
+
+INSERT INTO `asoru` (`id`, `anketID`, `soru`, `tip`) VALUES
+(7, 2, 'denemearapca', 1),
+(8, 2, 'deneme1ar', 1),
+(9, 3, 'مرحبا', 2),
+(10, 3, 'ara2', 3),
+(11, 3, 'ara3', 1),
+(12, 4, 'نعم ام لا', 2),
+(13, 4, 'نعم ام لا', 3),
+(14, 4, 'نعم ام لا', 1);
 
 -- --------------------------------------------------------
 
@@ -234,7 +288,22 @@ INSERT INTO `sik` (`soruID`, `val`) VALUES
 (6, 'as'),
 (6, 'what upp!!'),
 (7, 'YES'),
-(7, 'NO');
+(7, 'NO'),
+(8, '1'),
+(8, '2'),
+(7, 'eng'),
+(7, 'eng'),
+(8, 'eng'),
+(8, 'eng'),
+(9, 'YES'),
+(9, 'NO'),
+(11, 'eng'),
+(11, 'eng'),
+(11, 'enngg'),
+(12, 'YES'),
+(12, 'NO'),
+(14, 'arabic '),
+(14, 'arabic');
 
 -- --------------------------------------------------------
 
@@ -255,12 +324,15 @@ CREATE TABLE `soru` (
 
 INSERT INTO `soru` (`id`, `anketID`, `soru`, `tip`) VALUES
 (1, 2, 'soruasdfsdaf', 2),
-(2, 2, 'soru11', 1),
-(3, 2, 'sorustar', 3),
 (4, 2, 'weqwe', 3),
-(5, 2, 'soruıuuuuu', 1),
-(6, 2, 'soruıuuuuu', 1),
-(7, 2, 'soruıuuuuuqwdhqwhdkjhqwdk', 2);
+(7, 2, 'deneme', 1),
+(8, 2, 'deneme1', 1),
+(9, 3, 'deneme1', 2),
+(10, 3, 'deneme2', 3),
+(11, 3, 'deneme3', 1),
+(12, 4, 'arabic1', 2),
+(13, 4, 'arabic2', 3),
+(14, 4, 'arabic3', 1);
 
 -- --------------------------------------------------------
 
@@ -346,19 +418,19 @@ ALTER TABLE `admin`
 -- Tablo için AUTO_INCREMENT değeri `anket`
 --
 ALTER TABLE `anket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `anket_data`
 --
 ALTER TABLE `anket_data`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `anket_sonuc`
 --
 ALTER TABLE `anket_sonuc`
-  MODIFY `anket_yesorno_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
+  MODIFY `anket_yesorno_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `anket_yesorno_qu`
@@ -370,7 +442,7 @@ ALTER TABLE `anket_yesorno_qu`
 -- Tablo için AUTO_INCREMENT değeri `soru`
 --
 ALTER TABLE `soru`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `users`
