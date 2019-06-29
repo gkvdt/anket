@@ -213,13 +213,10 @@ if (!isset($_SESSION['admin'])){
                     </li>
                     <li class="header">MAIN</li>
                     <li><a href="users.php"><i class="zmdi zmdi-accounts"></i><span>User Settings</span></a></li>
-                    <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-city"></i><span>Yes or No Survey</span></a>
-                        <ul class="ml-menu">
-                            <li><a href="yes-or-no-survey.php">Build Survey</a></li>
-                            <li><a href="list-yes-or-no-survey.php">List Survey</a></li>
-
-                        </ul>
-                    </li>
+                    <li><a href="list-yes-or-no-survey.php"><i class="zmdi zmdi-accounts"></i><span>Survey Result</span></a></li>
+                    <li><a href="anket-ekle.php"><i class="zmdi zmdi-accounts"></i><span>Add Survey</span></a></li>
+                    <li><a href="anket-listele.php"><i class="zmdi zmdi-accounts"></i><span>List Survey</span></a></li>
+                    <li><a href="anket-kullanici-bilgileri.php"><i class="zmdi zmdi-accounts"></i><span>Users Data</span></a></li>
 
 
 

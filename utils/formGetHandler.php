@@ -5,6 +5,7 @@ include_once '../settings/init.php';
 		for($i=0;$i<$_GET['size'];$i++){
 			//TODO add null parameter all form item
 			insertChoises($id,$_GET,$i);
+            echo '<script>window.location.href="../logout.php"</script>';
 		}
 	}
 	function insertUserData($data){

@@ -27,7 +27,7 @@ if (!$_GET['anket_id']) {
         <div class="col-md-4" id="option1">
             <label for="">Add Quest</label>
             <div class="input-group p-t-10">
-                <input type="text" class="form-control" id="questtext" placeholder="Add Quest">
+                 <input type="text" class="form-control" id="questtext" placeholder="Add Quest">
                 <span class="input-group-addon">
                     <button class="btn btn-primary btn-sm   " type="" id="addquest"  onclick="questfunc()"
                      value="1"><i class="zmdi zmdi-mail-send"></i></button>

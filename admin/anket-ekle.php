@@ -17,7 +17,7 @@ session_start();
         </div>
    </div>
     <hr>
-    <div class="text-center"><button class="btn btn-primary"  id="addsurvey" type="submit">Add Question</button></div>
+    <div class="text-center"><button class="btn btn-primary"  id="addsurvey" type="submit">Add Survey</button></div>
 </form>
 </div>
 

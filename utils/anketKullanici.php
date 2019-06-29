@@ -3,7 +3,7 @@
 
 	$size = 0;
 
-	function anketSonucListele()
+	function renderUserData()
 	{
 		mAnketID();
 		global $db;
@@ -16,13 +16,15 @@
 
 	function renderTable($data)
 	{
-		renderTD();
 		foreach ($data as $key) {
 			?>
 			<tr onclick="window.location.href = 'anket-sonuc-detay.php?anket_id=<?php echo $key['anket_yesorno_id']; ?>'" style="cursor: pointer;"> <!-- edit link and add id -->
                                     <td><?php echo $key['anket_yesorno_branch']; ?></td>
                                     <td><?php echo $key['anket_yesorno_fullname']; ?></td>
-                                   <?php renderAnswers($key['anket_yesorno_id']);?>
+                                    <td><?php echo $key['anket_yesorno_country']; ?></td>
+                                    <td><?php echo $key['anket_yesorno_telno']; ?></td>
+                                    <td><?php echo $key['anket_yesorno_email']; ?></td>
+                                   
 									</tr>
 		<?php
 
@@ -39,9 +41,7 @@
 
 		}
 		?>
-			</tr>
-			</thead>
-			<tbody>
+			
 		<?php
 	}
 

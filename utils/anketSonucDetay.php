@@ -30,7 +30,7 @@
 				case 1:
 					//TODO çoklu
 					echo $key['cevap'];
-
+                    break;
 					// no break
 				case 2:
 					// TODO true or false

@@ -2,12 +2,11 @@
 
 
 
-<div class="body">
-  <div class="row clearfix">
+<div class="row clearfix">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="header">
-                        <h2><strong>Exportable</strong> Examples </h2>
+                        <h2><strong>Basic</strong> Examples </h2>
                         <ul class="header-dropdown">
                             <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
                                 <ul class="dropdown-menu slideUp float-right">
@@ -22,26 +21,24 @@
                         </ul>
                     </div>
                     <div class="body">
-                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
-                            <thead>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <thead>
+                                <?php include_once '../utils/anketSonuc.php';?>
                                 <tr>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php include_once '../utils/anketSonuc.php';
+                                    <th>Branch</th>
+                                    <th>Full Name</th>
+                                  
+                                <?php
 									anketSonucListele();
 								?>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
 
-</div>
 <?php include 'footer.php';?>
+
