@@ -71,6 +71,9 @@ function renderQuests($quests)
         <td><a href="../utils/deleteQuest.php?quest_id=<?php echo $key[
        'id'
    ]; ?>" class="btn btn-danger">Delete</a></td>
+   <td><a href="translate-quest.php?quest_id=<?php echo $key[
+       'id'
+   ].'&anket_id='.$key['anketID']; ?>" class="btn btn-danger">Translate</a></td>
 		</tr>
 
 	<?php } ?>

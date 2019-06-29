@@ -91,7 +91,10 @@
 					// no break
 				case 2:
 					// TODO true or false
-					echo $key['cevap'];
+					$color = $key['cevap'] == 'YES'? '#30db4c' : '#ff0000';
+					$x='<p style="color:'.$color.'">'. $key['cevap'] .'</p>';
+					echo $x; 
+
 					break;
 
 				case 3:
