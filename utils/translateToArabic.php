@@ -48,12 +48,6 @@ function updateArabicQuest($questID,$soru){
 	}
 }
 
-///////////////////////////////////********************************////////// */
-
-
-
-
-
 
 
 	function createSik($soruID, $sik)

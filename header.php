@@ -102,6 +102,6 @@ $_SESSION['user'] = $result['user_email'];
     <div class="container-fluid">
         <div class="row clearfix">
             <div class="col-lg-12">
-                <div class="card">
-                    <div class="body">
+                <div class="card" style="background-image:url('assets/sultans/bodybg.jpg');">
+                    <div class="body" >
 

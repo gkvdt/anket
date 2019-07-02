@@ -3,8 +3,8 @@
 
 @session_start();
 
-if (!$_SESSION['user']) {
-    header('location:index.php');
+if (!$_SESSION['admin']) {
+    echo '<script>window.location.href="../admin/anket-listele.php"</script>';
 }
 include_once "../utils/editQuest.php";
 

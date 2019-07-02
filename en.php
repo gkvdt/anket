@@ -49,14 +49,14 @@ if (!empty(post('anket_yesorno_branch') && post('anket_yesorno_fullname') && pos
 
 
 
-<form action="utils/formGetHandler.php" method="get" >
+<form action="utils/formGetHandler.php" method="get" onsubmit="subfunc()" >
 
     <div class="container">
         <div class="row clearfix">
 
             <div class="col-md-6">
                 <label style="font-size:15px;font-weight: 500; color:#704214 !important;"> Select Branch: </label>
-                <select class="form-control show-tick" name="anket_yesorno_branch">
+                <select class="form-control show-tick" name="anket_yesorno_branch" required>
 
                     <option value="">-- Select a Branch --</option>
                     <option   value="RIYAD">RIYAD</option>
@@ -328,13 +328,13 @@ if (!empty(post('anket_yesorno_branch') && post('anket_yesorno_fullname') && pos
             <div class="col-md-4">
                 <div class="form-group" >
                     <label style="font-size:15px;font-weight: 500; color:#704214 !important;"> Enter Phone Number: </label>
-                    <input type="text" name="anket_yesorno_telno" class="form-control" placeholder="Phone Number" />
+                    <input id="phone" type="text" name="anket_yesorno_telno"  class="form-control" placeholder="Phone Number" required>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group ">
                     <label style="font-size:15px;font-weight: 500; color:#704214 !important;"> Enter Email Adress: </label>
-                    <input type="text" class="form-control" name="anket_yesorno_email" placeholder="E-mail Adress" />
+                    <input id="mail" type="email" class="form-control" name="anket_yesorno_email" placeholder="E-mail Adress" />
                 </div>
             </div>
             <div class="col-md-4">
@@ -349,74 +349,24 @@ if (!empty(post('anket_yesorno_branch') && post('anket_yesorno_fullname') && pos
         </div>
 
 
-    </div>
-    </div>
     <hr>
-    <h3 class="text-center text-dark">Survey</h3>
+    <h3 style="color:#704214 !important; font-weight:bold; " class="text-center text-dark">Survey</h3>
     <hr>
-
-
-
-
     <div class="container text-center">
         <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
+            
+            <div class="col">
                 <?php
 
                 include_once 'utils/renderQuest.php';
 
-
                 $size  = renderQuests(getAktifAnket());
-
-                ?>
-
+                ?> 
                 <input type="hidden" name="size" value="<?php echo $size; ?>">
             </div>
-            <div class="col-md-3"></div>
+       
         </div>
     </div>
-    <!--
- <div class="row clearfix">
-                           <h3>Survey</h3>
-                        </div>
-
-                            <?php
-
-    //						$query = $db->query('SELECT * FROM anket_yesorno_qu', PDO::FETCH_ASSOC);
-    //				$result = $query->fetch();
-
-    ?>
-
-                        <div class="row clearfix">
-                            <label style="font-weight: bold;" class="text-dark">Survey Question:  </label>&nbsp;
-                            <label  class="text-dark"><?php
-    //echo $result['anket_yesorno_questions_qq'];
-    ?> </label>
-
-                        </div>
-
-                        <div class="row clearfix">
-
-                            <input type="radio" name="anket_yesorno_answer" value="YES" class="radio" onclick="open2()">&nbsp;
-                            <label class="text-center"> YES</label>
-                        </div>
-
-                        <div class="row clearfix">
-
-                            <input type="radio" name="anket_yesorno_answer" value="NO" class="radio" onclick="open1()">&nbsp;
-                            <label class="text-center"> NO</label>
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <input id="openr" type="text" style="display: none;" class="form-control" placeholder="Why not?" name="anket_yesorno_no_answer" />
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                    -->
     <hr>
     <div class="row clearfix">
         <div class="col-md-4"></div>
@@ -430,19 +380,24 @@ if (!empty(post('anket_yesorno_branch') && post('anket_yesorno_fullname') && pos
 
     </div>
 
+        </div>
+    </div>
 </form>
-<!--
+
 <script>
 
-    function open1() {
-        document.getElementById("openr").style.display = "block";
-    }
+function subfunc() {
+    var tel = document.getElementById('phone');
+    var mail = document.getElementById('mail');
 
-    function open2() {
-        document.getElementById("openr").style.display = "none";
-    }
+    if (tel.length>0 || mail.length>0) {
+        return true;
+
+    }else {return false;}
+}
+  
 </script>
--->
+
 
 <?php
 include 'footer.php';

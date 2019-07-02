@@ -31,7 +31,7 @@ function renderEditableData($data)
             break;
 
         default:
-            //
+            renderOther($data);
             break;
 	}
 }

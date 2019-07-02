@@ -39,6 +39,7 @@
 								?>
                                 </tbody>
                             </table>
+                            <a href="../utils/deleteAll.php?delete=all" class="btn btn-danger">Delete All!</a>
                         </div>
                     </div>
                 </div>

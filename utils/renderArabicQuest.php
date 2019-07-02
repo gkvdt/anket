@@ -80,12 +80,68 @@ function renderQuest($quest, $index, $anketID)
             // TODO stars
             renderStars($quest, $index);
             break;
+        case 4 : 
+            //TODO only text
+            renderText($quest,$index);
+            break;
 
+        case 5:
+            //TODO employee
+            renderEmployee($quest,$index);
+            break;
+ 
         default:
             //
             break;
     }
 }
+function renderEmployee($quest,$index){
+?>
+<div class="row clearfix">
+        <label style="font-size:15px;font-weight: 500; color:#704214 !important;float:left !important;" for=""><?php echo $quest['soru']; ?></label>
+
+        <select name="choice<?php echo $index; ?>" >
+        <?php renderOptions(); ?>
+        </select>
+</div>
+<hr>
+
+<?php
+}
+function renderOptions(){
+    global $db;
+    $sql="SELECT * FROM aemployee";
+    $result = $db->query($sql);
+    
+    foreach ($result->fetchAll() as $row) {
+        ?>
+        <option value="<?php echo $row['employee_name']; ?>">
+            <?php echo $row['employee_name']; ?>
+            </option>
+        <?php
+    }
+}
+function renderText($quest,$index){
+?>
+<div class="row clearfix">
+    <label  style="font-weight:bold; font-size:17px;"  class="text-dark"><?php echo $quest[
+        'soru'
+    ]; ?> </label>
+
+</div>
+
+<div class="row clearfix">
+    <input type="text" 
+    name="choice<?php echo $index; ?>" 
+    >
+</div>
+
+
+
+<?php
+}
+
+
 function renderAnketID($anketID)
 {
     ?>
@@ -96,7 +152,8 @@ function renderStars($quest, $index)
 {
     ?>
 			<div class="row clearfix">
-							<label  class="text-dark"><?php echo $quest['soru']; ?> </label>
+								<label style="font-weight: bold;" class="text-dark">مسح السؤال:  </label>&nbsp;
+								<label style=" font-size:16px; font-weight:500 "   class="text-dark"><?php echo $quest['soru']; ?> </label>
 	</div>
 			<div class="row clearfix">
 
@@ -152,8 +209,8 @@ function renderYesOrNoQuest($quest, $index)
 {
     ?>
 <div class="row clearfix">
-                            <label style="font-weight: bold;" class="text-dark">Survey Question:  </label>&nbsp;
-                            <label  class="text-dark"><?php echo $quest[
+                            <label style="font-weight: bold;" class="text-dark">مسح السؤال:  </label>&nbsp;
+                            <label style=" font-size:16px; font-weight:500 "  class="text-dark"><?php echo $quest[
                                 'soru'
                             ]; ?> </label>
 
@@ -164,13 +221,13 @@ function renderYesOrNoQuest($quest, $index)
 							<input type="radio" 
 							name="choice<?php echo $index; ?>"
 							 value="YES" class="radio" onclick="hide<?php echo $index;?>()">&nbsp;
-                            <label class="text-center"> نعم فعل</label>
+                            <label style="font-weight:bold; color:#704214; padding-left:5px; margin-top:-5x;" class="text-center"> نعم فعل</label>
                         </div>
 
                         <div class="row clearfix">
 
                             <input type="radio" name="choice<?php echo $index; ?>" value="NO" class="radio" onclick="showDesc<?php echo $index;?>()">&nbsp;
-                            <label class="text-center"> لا</label>
+                            <label style="font-weight:bold; color:#704214; padding-left:5px; margin-top:-5x;"  class="text-center"> لا</label>
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <input id="description<?php echo $index;?>" type="text" style="display: none;" class="form-control" placeholder="Why not?" name="whynot<?php echo $index; ?>" />
@@ -197,17 +254,17 @@ function renderMultiTypeQuest($quest, $index)
     ?>                      <div class="row clearfix">
 		
 			
-			
-			<label class="text-center"> 
-				<?php echo $quest['soru']; ?> 
+			<label style="font-weight: bold;" class="text-dark">مسح السؤال:  </label>&nbsp;
+			<label style=" font-size:16px; font-weight:500 "  class="text-center"> 
+				<?php  echo $quest['soru']; ?> 
 			</label>
 	</div> 
 	<?php foreach ($quest['choice'] as $key) { ?>
 			<div class="row clearfix">
-			<input type="radio" name="choice<?php echo $index; ?>" value="
+			<input  type="radio" name="choice<?php echo $index; ?>" value="
 			<?php echo $key; ?>
 			" class="radio" >
-			<label class="text-center"><?php echo $key; ?></label>
+			<label style="font-weight:bold; color:#704214; padding-left:5px; margin-top:-5x;" class="text-center"><?php echo $key; ?></label>
 			&nbsp;
 			</div>
 		

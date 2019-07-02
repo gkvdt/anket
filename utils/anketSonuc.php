@@ -20,10 +20,10 @@
 		foreach ($data as $key) {
 			?>
 			<tr onclick="window.location.href = 'anket-sonuc-detay.php?anket_id=<?php echo $key['anket_yesorno_id']; ?>'" style="cursor: pointer;"> <!-- edit link and add id -->
-                                    <td><?php echo $key['anket_yesorno_branch']; ?></td>
-                                    <td><?php echo $key['anket_yesorno_fullname']; ?></td>
-                                   <?php renderAnswers($key['anket_yesorno_id']);?>
-									</tr>
+				<td><?php echo $key['anket_yesorno_branch']; ?></td>
+				<td><?php echo $key['anket_yesorno_fullname']; ?></td>
+				<?php renderAnswers($key['anket_yesorno_id']);?>
+				</tr>
 		<?php
 
 		
@@ -104,6 +104,7 @@
 
 				default:
 					//
+					echo $key['cevap'];
 					break;
 			}
 	}

@@ -15,7 +15,7 @@
 	{
 		foreach ($data as $key) {
 			?>
-			<tr> <!-- edit link and add id -->
+			<tr> 
             	<td><?php echo $key['soru']; ?></td>
             	<td><?php echoType($key); ?></td>
             	<td><?php renderYesOrNoQuest($key) ?></td>
@@ -44,6 +44,7 @@
 
 				default:
 					//
+					echo $key['cevap'];
 					break;
 			}
 	}

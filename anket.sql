@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 29 Haz 2019, 11:27:45
+-- Üretim Zamanı: 02 Tem 2019, 22:21:17
 -- Sunucu sürümü: 10.1.37-MariaDB
 -- PHP Sürümü: 7.3.0
 
@@ -45,6 +45,27 @@ INSERT INTO `admin` (`admin_id`, `admin_username`, `admin_password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tablo için tablo yapısı `aemployee`
+--
+
+CREATE TABLE `aemployee` (
+  `id` int(11) NOT NULL,
+  `employee_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Tablo döküm verisi `aemployee`
+--
+
+INSERT INTO `aemployee` (`id`, `employee_name`) VALUES
+(3, 'arap1'),
+(4, 'arap2'),
+(5, 'arap3'),
+(6, 'arap4');
+
+-- --------------------------------------------------------
+
+--
 -- Tablo için tablo yapısı `aktif_anket`
 --
 
@@ -57,7 +78,7 @@ CREATE TABLE `aktif_anket` (
 --
 
 INSERT INTO `aktif_anket` (`aktif_id`) VALUES
-(4);
+(6);
 
 -- --------------------------------------------------------
 
@@ -69,15 +90,6 @@ CREATE TABLE `anket` (
   `id` int(11) NOT NULL,
   `baslik` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Tablo döküm verisi `anket`
---
-
-INSERT INTO `anket` (`id`, `baslik`) VALUES
-(2, '0'),
-(3, 'deneme'),
-(4, 'full arabic');
 
 -- --------------------------------------------------------
 
@@ -114,7 +126,17 @@ INSERT INTO `anket_data` (`id`, `anketID`, `soruTip`) VALUES
 (16, 3, 1),
 (17, 4, 2),
 (18, 4, 3),
-(19, 4, 1);
+(19, 4, 1),
+(20, 3, 4),
+(21, 3, 2),
+(22, 6, 2),
+(23, 6, 3),
+(24, 6, 4),
+(25, 6, 1),
+(26, 6, 2),
+(27, 6, 3),
+(28, 6, 4),
+(29, 6, 1);
 
 -- --------------------------------------------------------
 
@@ -128,18 +150,9 @@ CREATE TABLE `anket_sonuc` (
   `anket_yesorno_fullname` varchar(500) NOT NULL,
   `anket_yesorno_country` varchar(500) NOT NULL,
   `anket_yesorno_telno` varchar(500) NOT NULL,
-  `anket_yesorno_email` varchar(500) NOT NULL
+  `anket_yesorno_email` varchar(500) NOT NULL,
+  `anket_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Tablo döküm verisi `anket_sonuc`
---
-
-INSERT INTO `anket_sonuc` (`anket_yesorno_id`, `anket_yesorno_branch`, `anket_yesorno_fullname`, `anket_yesorno_country`, `anket_yesorno_telno`, `anket_yesorno_email`) VALUES
-(135, 'RIYAD', 'sad', 'Afghanistan', 'dwqwd', 'wdqd'),
-(136, 'RIYAD', 'memet', 'Afghanistan', '1', '2'),
-(137, 'RIYAD', 'memet', 'Afghanistan', '1', '2'),
-(138, 'RIYAD', 'vedat güzelkokar', 'Philippines', '05313962251', 'qwd');
 
 -- --------------------------------------------------------
 
@@ -154,29 +167,6 @@ CREATE TABLE `anket_sonuc_cevaplar` (
   `tip` int(11) NOT NULL,
   `aciklama` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Tablo döküm verisi `anket_sonuc_cevaplar`
---
-
-INSERT INTO `anket_sonuc_cevaplar` (`sonucID`, `soru`, `cevap`, `tip`, `aciklama`) VALUES
-(0, 'soru', 'YES', 2, ''),
-(0, 'soru', '\r\n			asdlşkfjasşdlkfjsd 			', 1, NULL),
-(134, 'soru', 'YES', 2, ''),
-(134, 'soru', '\r\n			asdlşkfjasşdlkfjsd 			', 1, NULL),
-(135, 'soruasdfsdaf', 'YES', 2, ''),
-(135, 'soru11', '\r\n			asdlşkfjasşdlkfjsd 			', 1, NULL),
-(136, 'soruasdfsdaf', 'NO', 2, 'asfasfasf'),
-(136, 'soru11', '\r\n			asdlşkfjasşdlkfjsd 			', 1, NULL),
-(136, 'sorustar', '3', 3, NULL),
-(137, 'soruasdfsdaf', 'NO', 2, 'asfasfasf'),
-(137, 'soru11', '\r\n			asdlşkfjasşdlkfjsd 			', 1, NULL),
-(137, 'sorustar', '3', 3, NULL),
-(138, 'asd', 'qweqwe', 1, NULL),
-(139, 'asd', 'qweqwe', 1, NULL),
-(138, 'arabic1', 'YES', 2, ''),
-(138, 'arabic2', '5', 3, NULL),
-(138, 'arabic3', '\r\n			نعم ام لا			', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -218,7 +208,11 @@ INSERT INTO `asik` (`soruID`, `val`) VALUES
 (11, 'arpa'),
 (14, 'نعم ام لا'),
 (14, 'نعم ام لا'),
-(14, 'نعم ام لا');
+(14, 'نعم ام لا'),
+(24, 'arap'),
+(24, 'arap'),
+(24, 'arap'),
+(24, 'arapasdasd');
 
 -- --------------------------------------------------------
 
@@ -240,12 +234,26 @@ CREATE TABLE `asoru` (
 INSERT INTO `asoru` (`id`, `anketID`, `soru`, `tip`) VALUES
 (7, 2, 'denemearapca', 1),
 (8, 2, 'deneme1ar', 1),
-(9, 3, 'مرحبا', 2),
-(10, 3, 'ara2', 3),
-(11, 3, 'ara3', 1),
 (12, 4, 'نعم ام لا', 2),
 (13, 4, 'نعم ام لا', 3),
-(14, 4, 'نعم ام لا', 1);
+(14, 4, 'نعم ام لا', 1),
+(15, 4, 'asdasd', 5),
+(20, 6, 'deneme1arap', 2),
+(21, 6, 'deneme2arap', 3),
+(22, 6, 'deneme3arap', 4),
+(24, 6, 'deneme5arap', 1),
+(23, 6, 'deneme4arap', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `employee`
+--
+
+CREATE TABLE `employee` (
+  `id` int(11) NOT NULL,
+  `employee_name` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -303,7 +311,22 @@ INSERT INTO `sik` (`soruID`, `val`) VALUES
 (12, 'YES'),
 (12, 'NO'),
 (14, 'arabic '),
-(14, 'arabic');
+(14, 'arabic'),
+(18, 'YES'),
+(18, 'NO'),
+(20, 'YES'),
+(20, 'NO'),
+(24, '1'),
+(24, '2'),
+(24, '3'),
+(24, '4'),
+(25, 'YES'),
+(25, 'NO'),
+(29, '1'),
+(29, '2'),
+(29, '3'),
+(29, '4'),
+(29, '5');
 
 -- --------------------------------------------------------
 
@@ -327,12 +350,23 @@ INSERT INTO `soru` (`id`, `anketID`, `soru`, `tip`) VALUES
 (4, 2, 'weqwe', 3),
 (7, 2, 'deneme', 1),
 (8, 2, 'deneme1', 1),
-(9, 3, 'deneme1', 2),
-(10, 3, 'deneme2', 3),
-(11, 3, 'deneme3', 1),
 (12, 4, 'arabic1', 2),
 (13, 4, 'arabic2', 3),
-(14, 4, 'arabic3', 1);
+(14, 4, 'arabic3', 1),
+(15, 4, 'asd', 5),
+(16, 3, 'text', 4),
+(17, 3, 'employee', 5),
+(18, 3, 'ef', 2),
+(20, 6, 'deneme1', 2),
+(21, 6, 'deneme2', 3),
+(22, 6, 'deneme3', 4),
+(23, 6, 'deneme4', 5),
+(24, 6, 'deneme5', 1),
+(25, 6, 'deneme6', 2),
+(26, 6, 'deneme7', 3),
+(27, 6, 'deneme8', 4),
+(28, 6, 'deneme9', 5),
+(29, 6, 'deneme10', 1);
 
 -- --------------------------------------------------------
 
@@ -393,6 +427,12 @@ ALTER TABLE `anket_yesorno_qu`
   ADD PRIMARY KEY (`anket_yesorno_no_qid`);
 
 --
+-- Tablo için indeksler `employee`
+--
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Tablo için indeksler `soru`
 --
 ALTER TABLE `soru`
@@ -418,19 +458,19 @@ ALTER TABLE `admin`
 -- Tablo için AUTO_INCREMENT değeri `anket`
 --
 ALTER TABLE `anket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `anket_data`
 --
 ALTER TABLE `anket_data`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `anket_sonuc`
 --
 ALTER TABLE `anket_sonuc`
-  MODIFY `anket_yesorno_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `anket_yesorno_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `anket_yesorno_qu`
@@ -439,10 +479,16 @@ ALTER TABLE `anket_yesorno_qu`
   MODIFY `anket_yesorno_no_qid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- Tablo için AUTO_INCREMENT değeri `employee`
+--
+ALTER TABLE `employee`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- Tablo için AUTO_INCREMENT değeri `soru`
 --
 ALTER TABLE `soru`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `users`

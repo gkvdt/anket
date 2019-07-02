@@ -50,139 +50,14 @@ if (!isset($_SESSION['admin'])){
         </li>
 
         </a>
-        <ul class="dropdown-menu pullDown">
-            <li class="body">
-                <ul class="menu list-unstyled">
-                    <li>
-                        <a href="javascript:void(0);">
-                            <div class="media">
-                                <img class="media-object w60" src="../assets/images/image-gallery/1.jpg" alt="">
-                                <div class="media-body">
-                                    <span class="name">Sophia <span class="time">For Sale</span></span>
-                                    <span class="message">Relaxing Apartment</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);">
-                            <div class="media">
-                                <img class="media-object w60" src="../assets/images/image-gallery/2.jpg" alt="">
-                                <div class="media-body">
-                                    <span class="name">Sophia <span class="time">For Rent</span></span>
-                                    <span class="message">Co-op Apartment in Bay Terrace</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);">
-                            <div class="media">
-                                <img class="media-object w60" src="../assets/images/image-gallery/3.jpg" alt="">
-                                <div class="media-body">
-                                    <span class="name">Isabella <span class="time">For Rent</span></span>
-                                    <span class="message">A must see Villa on Chicago Ave</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);">
-                            <div class="media">
-                                <img class="media-object w60" src="../assets/images/image-gallery/4.jpg" alt="">
-                                <div class="media-body">
-                                    <span class="name">Alexander <span class="time">For Sale</span></span>
-                                    <span class="message">5 Room Apartment Special Deal</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);">
-                            <div class="media">
-                                <img class="media-object w60" src="../assets/images/image-gallery/5.jpg" alt="">
-                                <div class="media-body">
-                                    <span class="name">Grayson <span class="time">For Rent</span></span>
-                                    <span class="message">Real House Luxury Villa</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="footer"> <a href="javascript:void(0);">View All</a> </li>
-        </ul>
+     
         </li>
 
-        <ul class="dropdown-menu pullDown">
-            <li class="header">Project</li>
-            <li class="body">
-                <ul class="menu tasks list-unstyled">
-                    <li>
-                        <a href="javascript:void(0);">
-                            <div class="progress-container progress-primary">
-                                <span class="progress-badge">eCommerce Website</span>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%;">
-                                        <span class="progress-value">86%</span>
-                                    </div>
-                                </div>
-                                <ul class="list-unstyled team-info">
-                                    <li class="m-r-15"><small class="text-muted">Team</small></li>
-                                    <li><img src="../assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                    <li><img src="../assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                                    <li><img src="../assets/images/xs/avatar4.jpg" alt="Avatar"></li>
-                                </ul>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);">
-                            <div class="progress-container progress-info">
-                                <span class="progress-badge">iOS Game Dev</span>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                                        <span class="progress-value">45%</span>
-                                    </div>
-                                </div>
-                                <ul class="list-unstyled team-info">
-                                    <li class="m-r-15"><small class="text-muted">Team</small></li>
-                                    <li><img src="../assets/images/xs/avatar10.jpg" alt="Avatar"></li>
-                                    <li><img src="../assets/images/xs/avatar9.jpg" alt="Avatar"></li>
-                                    <li><img src="../assets/images/xs/avatar8.jpg" alt="Avatar"></li>
-                                    <li><img src="../assets/images/xs/avatar7.jpg" alt="Avatar"></li>
-                                    <li><img src="../assets/images/xs/avatar6.jpg" alt="Avatar"></li>
-                                </ul>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);">
-                            <div class="progress-container progress-warning">
-                                <span class="progress-badge">Home Development</span>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100" style="width: 29%;">
-                                        <span class="progress-value">29%</span>
-                                    </div>
-                                </div>
-                                <ul class="list-unstyled team-info">
-                                    <li class="m-r-15"><small class="text-muted">Team</small></li>
-                                    <li><img src="../assets/images/xs/avatar5.jpg" alt="Avatar"></li>
-                                    <li><img src="../assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                    <li><img src="../assets/images/xs/avatar7.jpg" alt="Avatar"></li>
-                                </ul>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="footer"><a href="javascript:void(0);">View All</a></li>
-        </ul>
+   
         </li>
         <li class="hidden-sm-down">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search...">
-                <span class="input-group-addon"><i class="zmdi zmdi-search"></i></span>
+               
             </div>
         </li>
         <li class="float-right">
@@ -195,7 +70,7 @@ if (!isset($_SESSION['admin'])){
 <!-- Left Sidebar -->
 <aside id="leftsidebar" class="sidebar">
     <ul class="nav nav-tabs">
-        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#dashboard"><i class="zmdi zmdi-home m-r-5"></i>Sultan's Admin</a></li>
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="panel.php"><i class="zmdi zmdi-home m-r-5"></i>Sultan's Admin</a></li>
 
     </ul>
     <div class="tab-content">
@@ -213,10 +88,12 @@ if (!isset($_SESSION['admin'])){
                     </li>
                     <li class="header">MAIN</li>
                     <li><a href="users.php"><i class="zmdi zmdi-accounts"></i><span>User Settings</span></a></li>
-                    <li><a href="list-yes-or-no-survey.php"><i class="zmdi zmdi-accounts"></i><span>Survey Result</span></a></li>
-                    <li><a href="anket-ekle.php"><i class="zmdi zmdi-accounts"></i><span>Add Survey</span></a></li>
-                    <li><a href="anket-listele.php"><i class="zmdi zmdi-accounts"></i><span>List Survey</span></a></li>
-                    <li><a href="anket-kullanici-bilgileri.php"><i class="zmdi zmdi-accounts"></i><span>Users Data</span></a></li>
+                    <li><a href="list-yes-or-no-survey.php"><i class="zmdi  zmdi-group"></i><span>Survey Result</span></a></li>
+                    <li><a href="anket-ekle.php"><i class="zmdi zmdi-plus"></i><span>Add Survey</span></a></li>
+                    <li><a href="add-employee.php"><i class="zmdi zmdi-plus"></i><span>Employees</span></a></li>
+                    <li><a href="anket-listele.php"><i class="zmdi zmdi-swap-vertical"></i><span>List Survey</span></a></li>
+                    <li><a href="anket-kullanici-bilgileri.php"><i class="zmdi  zmdi-view-stream"></i><span>Users Data</span></a></li>
+                    <li><a href="admins.php"><i class="zmdi  zmdi-view-stream"></i><span>Admin Settings</span></a></li>
 
 
 
@@ -691,14 +568,7 @@ if (!isset($_SESSION['admin'])){
 <div class="chat-wrapper">
     <div class="card">
         <div class="header">
-            <ul class="list-unstyled team-info margin-0">
-                <li class="m-r-15"><h2>Agent Team</h2></li>
-                <li><img src="../assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                <li><img src="../assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                <li><img src="../assets/images/xs/avatar4.jpg" alt="Avatar"></li>
-                <li><img src="../assets/images/xs/avatar6.jpg" alt="Avatar"></li>
-                <li><a href="javascript:void(0);" title="Add Member"><i class="zmdi zmdi-plus-circle"></i></a></li>
-            </ul>
+  
         </div>
         <div class="body">
             <div class="chat-widget">
@@ -748,14 +618,8 @@ if (!isset($_SESSION['admin'])){
                 </h2>
             </div>
             <div class="col-lg-5 col-md-6 col-sm-12">
-                <button class="btn btn-white btn-icon btn-round hidden-sm-down float-right ml-3" type="button">
-                    <i class="zmdi zmdi-plus"></i>
-                </button>
-                <ul class="breadcrumb float-md-right">
-                    <li class="breadcrumb-item"><a href="#"><i class="zmdi zmdi-home"></i> Home</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0);">Admin Page</a></li>
-                    <li class="breadcrumb-item active">Control</li>
-                </ul>
+               
+           
             </div>
         </div>
     </div>

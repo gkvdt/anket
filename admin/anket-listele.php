@@ -1,9 +1,7 @@
 <?php include 'header.php';?>
 
 <div class="container">
-                <button class="btn btn-white btn-icon btn-round hidden-sm-down float-right ml-3" type="button">
-                    Add Survey <i class="zmdi zmdi-plus"></i>
-                </button>
+               
 
     <div class="table-responsive">
         <table class="table td_2 table-striped table-hover js-basic-example dataTable vcenter">

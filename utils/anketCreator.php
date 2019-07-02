@@ -82,8 +82,21 @@
 		$sik = ' ';
 		addQuest($anketID, $quest, 3, $sik);
 	}
-
-	if ($_GET['anket_title']) {
+	if (@$_GET['employee_name']) {
+		createEmployee($_GET['employee_name']);
+	}
+	function createEmployee($name)
+	{
+		global $db;
+		$sql = "INSERT INTO employee (employee_name) VALUES ('{$name}')";
+		if ($db->query($sql)) {
+			echo 'ok';
+		} else {
+			echo 'error1';
+		}
+		echo '<script>window.location.href="../admin/add-employee.php"</script>';
+	}
+	if (@$_GET['anket_title']) {
 		createAnket($_GET['anket_title']);
 	}
 
@@ -98,9 +111,33 @@
 			case 3:
 				createStars($_GET['anket_id'], $_GET['quest']);
 				break;
+			case 4:
+				// TODO: here only text quest
+					createTextQuest($_GET['anket_id'],$_GET['quest']);
+					break ;
+			case 5:
+					// TODO: here select employee
+					createEmployeeQuest($_GET['anket_id'],$_GET['quest'],5);
+					break;
 
 			default:
 				echo 'error';
 				break;
 		}
+	}
+
+	function createTextQuest($anketID,$quest)
+	{
+		addQuest($anketID,$quest,4," ");
+	}
+
+	function createEmployeeQuest($anketID, $quest, $type)
+	{
+		global $db;
+		$sql = 'INSERT INTO soru(anketID,soru,tip) VALUES (?,?,?)';
+		$query = $db->prepare($sql);
+		if ($query->execute([$anketID, $quest, $type])) {
+			return true;
+		}
+		return false;
 	}

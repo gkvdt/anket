@@ -1,4 +1,3 @@
-
 <?php
 include_once '../settings/init.php';
 function anketQuestList($anketID)
@@ -6,7 +5,6 @@ function anketQuestList($anketID)
     $quests = getQuest($anketID);
     renderQuests($quests);
 }
-
 function getQuest($anketID)
 {
     global $db;
@@ -20,7 +18,6 @@ function getQuest($anketID)
     }
     return $quests;
 }
-
 function getChoice($soruID)
 {
     global $db;
@@ -45,12 +42,19 @@ function echoType($type)
             // TODO true or false
             echo 'Yes or No';
             break;
-
         case 3:
             // TODO stars
             echo 'Rate with Star';
             break;
-
+         case 4:
+            // TODO stars
+            echo 'Only Text';
+            break;
+         case 5:
+            // TODO stars
+            echo 'Employee';
+            break;
+                
         default:
             //
             break;
@@ -60,11 +64,11 @@ function renderQuests($quests)
 {
     ?>
 
-	<table>
+	<table class="table ">
 	<?php foreach ($quests as $key) { ?>
 		<tr>
-			<td><?php echo $key['soru']; ?></td>
-			<td><?php echoType($key['tip']); ?></td>
+			<td style="color:#704214 !important; font-size:14px; font-weight:bold;" ><?php echo $key['soru']; ?></td>
+			<td style="font-size:14px; font-weight:bold;"><?php echoType($key['tip']); ?></td>
 			<td><a href="edit-quest.php?quest_id=<?php echo $key[
        'id'
    ]; ?>" class="btn btn-warning">Edit</a></td>
@@ -73,13 +77,11 @@ function renderQuests($quests)
    ]; ?>" class="btn btn-danger">Delete</a></td>
    <td><a href="translate-quest.php?quest_id=<?php echo $key[
        'id'
-   ].'&anket_id='.$key['anketID']; ?>" class="btn btn-danger">Translate</a></td>
+   ].'&anket_id='.$key['anketID']; ?>" class="btn btn-success">Translate</a></td>
 		</tr>
 
 	<?php } ?>
 	</table>
 	<?php
 }
-
-
 ?>

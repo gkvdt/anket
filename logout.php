@@ -23,8 +23,10 @@ session_destroy();
 
             <strong><h2>Well Done!</h2></strong> <h3>
                 Thank you for your feedback! &nbsp;
+                <a href="language.php" type="submit" class="btn btn-primary pull-right zmdi zmdi-arrow-left">New Survey</a>
         </div>
 
+        
         
     </div>
 </div>

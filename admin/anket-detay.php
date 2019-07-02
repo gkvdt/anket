@@ -34,14 +34,16 @@ if (!$_GET['anket_id']) {
                 </span>
             </div>
         </div>
-        
+
         <div class="col-md-4" id="option2">
             <label for="">Select Quest Type</label>
             <div class="input-group p-t-10">
                 <select onchange="changefunc()" class="form-control show-tick" id="select">
-                    <option value="4">-- Please select --</option>
+                    <option value="9">-- Please select --</option>
                     <option value="2">Yes-Or-No</option>
                     <option value="3">Stars</option>
+                    <option value="4">Only Text</option>
+                    <option value="5">Employee</option>
                     <option id="multianswer" value="1">Multi Answer</option>
 
                 </select>
@@ -52,18 +54,18 @@ if (!$_GET['anket_id']) {
             <textarea rows="4" id="optionss"class="form-control no-resize" placeholder="Please type what you want..."></textarea>
 
         </div>
-    
+
     </div>
     <hr>
-    
-    
+
+
     <div class="text-center"><button class="btn btn-primary" onclick="getquestfunc()" id="getquest" type="">Add Question</button></div>
-    <div class="text-center"><button class="btn btn-primary" style="display: none;" onclick="submitfunc()" id="submitt" type="submit" >Unknown</button></div>
-    
-    
+    <div class="text-center"><button class="btn btn-primary" style="display: none;" onclick="submitfunc()" id="submitt" type="submit" >ADD</button></div>
+
+
 </div>
 <script >
-	
+
 	function getquestfunc(){
 		var soru = document.getElementById('option1');
 		soru.style.display = "block";
@@ -75,7 +77,7 @@ if (!$_GET['anket_id']) {
 
 		return false
 	}
-	
+
 
 
     function questfunc(){
@@ -122,14 +124,14 @@ if (!$_GET['anket_id']) {
 
 <script type="text/javascript">
 
-	
+
 
 $(document).ready(function(){
    $('#submitt').click(function(){
 		 var text = $('#questtext').val()
-        if(text.length>1){ 
+        if(text.length>1){
             var typee = $('#select').val()
-            if(typee !== 4){
+            if(typee !== 9){
                 var anketID =  $('#anket_id').val()
                 if (typee == 1) {
                     var options = $('#optionss').val()
@@ -144,7 +146,7 @@ $(document).ready(function(){
                         quest:text,
                         typee:typee,
                         anket_id:anketID
-                    }  
+                    }
                 }
                 console.log(dataa)
                 $.get({
@@ -174,7 +176,7 @@ $(document).ready(function(){
     #option1{
         display:none;
     }
-    
+
     #option2{
         display: none;
     }
@@ -185,4 +187,3 @@ $(document).ready(function(){
 
 </style>
 <?php include 'footer.php';?>
-

@@ -66,18 +66,15 @@ include_once '../settings/init.php';
 
 
  }
-	
-	/*
-	[anket_yesorno_branch] => RIYAD
-	[anket_yesorno_fullname] => qwd
-	[anket_yesorno_country] => Afghanistan
-	[anket_yesorno_telno] => qwd
-	[anket_yesorno_email] => qwd
-	[anket_id] => 3
-	[choice0] => YES
-	[whynot0] => 
-	[choice1] => 
-			asdflksddajf			
-	[choice2] => 5
-	[submit] => Send
-	*/
+
+ /*
+choice0=qwe&
+choice2=YES&
+
+
+************
+
+&choice0=wqd
+&choice2=YES
+
+ */
